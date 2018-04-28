@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Design Pattern," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="垃圾佬的回收之路">
-<meta name="keywords" content="Trash">
-<meta property="og:type" content="website">
-<meta property="og:title" content="OnlyWay的垃圾站">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="###单例模式 设计模式是对软件设计中普遍存在的各种问题，所提出的解决方案。单例模式可能是开发中用得最多的设计模式了吧，用于在类中生成唯一的实例。 ####Bill pugh solution 123456789101112public class BillPughSingleton &amp;#123;    private BillPughSingleton() &amp;#123;    &amp;#125;">
+<meta name="keywords" content="Design Pattern">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Singleton">
+<meta property="og:url" content="http://yoursite.com/2018/04/28/Singleton/index.html">
 <meta property="og:site_name" content="OnlyWay的垃圾站">
-<meta property="og:description" content="垃圾佬的回收之路">
+<meta property="og:description" content="###单例模式 设计模式是对软件设计中普遍存在的各种问题，所提出的解决方案。单例模式可能是开发中用得最多的设计模式了吧，用于在类中生成唯一的实例。 ####Bill pugh solution 123456789101112public class BillPughSingleton &amp;#123;    private BillPughSingleton() &amp;#123;    &amp;#125;">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-28T09:55:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OnlyWay的垃圾站">
-<meta name="twitter:description" content="垃圾佬的回收之路">
+<meta name="twitter:title" content="Singleton">
+<meta name="twitter:description" content="###单例模式 设计模式是对软件设计中普遍存在的各种问题，所提出的解决方案。单例模式可能是开发中用得最多的设计模式了吧，用于在类中生成唯一的实例。 ####Bill pugh solution 123456789101112public class BillPughSingleton &amp;#123;    private BillPughSingleton() &amp;#123;    &amp;#125;">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/28/Singleton/"/>
 
 
 
 
 
-  <title>OnlyWay的垃圾站</title>
+  <title>Singleton | OnlyWay的垃圾站</title>
   
 
 
@@ -144,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -218,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -250,9 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/28/Singleton/" itemprop="url">Singleton</a></h1>
+          <h1 class="post-title" itemprop="name headline">Singleton</h1>
         
 
         <div class="post-meta">
@@ -302,9 +300,7 @@
       
 
       
-        
-          
-            <p>###单例模式</p>
+        <p>###单例模式</p>
 <p>设计模式是对软件设计中普遍存在的各种问题，所提出的解决方案。单例模式可能是开发中用得最多的设计模式了吧，用于在类中生成唯一的实例。</p>
 <p>####Bill pugh solution</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class BillPughSingleton &#123;</span><br><span class="line">    private BillPughSingleton() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    private static class LazyHolder &#123;</span><br><span class="line">        private static final BillPughSingleton INSTANCE = new BillPughSingleton();</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public static BillPughSingleton getInstance() &#123;</span><br><span class="line">        return LazyHolder.INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -319,8 +315,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public enum EnumSingleton &#123;</span><br><span class="line">    INSTANCE;</span><br><span class="line">    public void say()&#123;</span><br><span class="line">        System.out.println(&quot;OnlyWay&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Android使用enum之后的dex大小会增加不少，运行时还会产生额外的内存占用，因此官方强烈建议不要在Android程序里面使用到enum.</p>
 
-          
-        
       
     </div>
     
@@ -335,14 +329,20 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Design-Pattern/" rel="tag"># Design Pattern</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -352,10 +352,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -363,6 +364,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -568,6 +573,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
